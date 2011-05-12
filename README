@@ -1,0 +1,56 @@
+textproc
+
+David Andrzejewski (andrzeje@cs.wisc.edu)
+Department of Computer Sciences
+University of Wisconsin-Madison, USA
+
+
+OVERVIEW
+
+This code does some very simple pre-processing of raw text in order to
+prepare nice inputs to topic modeling code.  
+
+Before building with 'mvn package', call getmodels.sh to download
+required OpenNLP model files (used for tokenization and sentence
+detection).
+
+
+USAGE
+
+java -jar textproc-0.0.1-SNAPSHOT-jar-with-dependencies.jar 
+followed by COMMAND ARG1 ARG2 ...
+
+
+COMMANDS
+
+counts - how many unique vocab terms you *would* have at wordcount thresholds
+ foo.doclist (input)  full paths to the raw text files
+ 50          (input)  max threshold to consider 
+ foo.counts  (output) will contain vocabulary sizes at various thresholds     
+
+makestop - make stoplist of rarely occurring words
+ foo.doclist (input)  full paths to the raw text files
+ 50          (input)  occurrence threshold 
+ foo.stop    (output) will contain terms occuring < thresh times
+
+makevocab - construct vocabulary 
+ foo.doclist (input)  full paths to the raw text files
+ foo.stop    (input)  stoplist, one word per line
+ foo.vocab   (output) foo.vocab will contain vocabulary, one word per line
+
+makecorpus - construct actual corpus files        
+ foo.doclist (input)  full paths to the raw text files
+ foo.vocab   (input)  vocabulary, one word per line
+ foo         (output) will create corpus files: *.words, *.docs, *.sent
+
+docfilter - filter documents down to those containing ALL terms of interest
+ foo.doclist  (input)  full paths to the raw text files
+ foo.keywords (input)  filter keywords, one word per line
+ foo.hitdocs  (output) will contain documents containing ALL keywords
+
+
+LICENSE
+
+This software is open-source, released under the terms of the GNU
+General Public License version 3, or any later version of the GPL (see
+COPYING).
