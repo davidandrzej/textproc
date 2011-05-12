@@ -1,0 +1,2 @@
+You must run 'bash getmodels.sh' from project root in order to
+download the tokenization and sentence detection models for OpenNLP.
