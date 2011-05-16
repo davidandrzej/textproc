@@ -10,7 +10,7 @@ OVERVIEW
 This code does some very simple pre-processing of raw text in order to
 prepare nice inputs to topic modeling code.  
 
-Before building with 'mvn package', call getmodels.sh to download
+Before building with 'mvn package', do 'bash getmodels.sh' to download
 required OpenNLP model files (used for tokenization and sentence
 detection).
 
