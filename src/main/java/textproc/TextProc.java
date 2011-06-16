@@ -405,7 +405,7 @@ public class TextProc {
 	 * -tokenize with OpenNLP
 	 * -downcase
 	 * -depunc from OUTSIDE only 
-	 * (eg, [I am bat-man.] becomes [I am bat-man]) 
+	 * (eg, [I am BAT-man.] becomes [i am bat-man]) 
 	 * 
 	 * @param dirName	
 	 * @return
