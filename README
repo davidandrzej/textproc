@@ -8,7 +8,8 @@ University of Wisconsin-Madison, USA
 OVERVIEW
 
 This code does some very simple pre-processing of raw text in order to
-prepare nice inputs to topic modeling code.  
+prepare nice inputs to topic modeling code.  For example, First-Order
+Logic LDA (https://github.com/davidandrzej/LogicLDA).
 
 Before building with 'mvn package', do 'bash getmodels.sh' to download
 required OpenNLP model files (used for tokenization and sentence
@@ -47,6 +48,17 @@ docfilter - filter documents down to those containing ALL terms of interest
  foo.doclist  (input)  full paths to the raw text files
  foo.keywords (input)  filter keywords, one word per line
  foo.hitdocs  (output) will contain documents containing ALL keywords
+
+
+RESOURCE DEPENDENCIES
+
+getmodels.sh will fetch OpenNLP models from sourceforge, as well as an
+English stoplist associated with a publication that appeared in the
+Journal of Machine Learning Research (JMLR):
+
+David D. Lewis, Yiming Yang, Tony G. Rose, and Fan Li. 2004. RCV1: A
+New Benchmark Collection for Text Categorization
+Research. J. Mach. Learn. Res. 5 (December 2004), 361-397.
 
 
 LICENSE
